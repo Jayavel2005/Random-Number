@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(port.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .box {
+        width: 350px;
+        height: 250px;
+        border: 5px solid grey;
+        box-shadow: 0px 5px 10px rgb(0, 0, 0);
+        position: relative;
+        left: 25%;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        font-family: "Rubik Mono One", monospace;
+        color: white;
+        margin-bottom: 10px;
+      }
+      h3{
+        margin-bottom: 10px;
+        font-family: "Rubik Mono One", monospace;
+        text-align: center;
+        color: aquamarine;
+        text-decoration: underline dotted;
+        font-size: 25px;
+        margin-bottom: 15px;
+
+      }
+      input{
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 20px;
+      }
+      ::-webkit-input-placeholder{
+        padding-left: 30px;
+        font-size: 20px;
+        color: rgb(0, 13, 255);
+        font-weight: bold;
+        text-align: center;       
+      }
+      .submit{
+        background-color: transparent;
+        color: white;
+        font-size: 25px;
+        border: 2px solid rgb(97, 97, 97);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        font-weight: bolder;
+
+      }
+      .submit:active{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 1); 
+      }
+      p{
+        color: white;
+        font-size: 20px;
+        font-family: "Rubik Mono One", monospace;
+      }
+
+      @media only screen and (max-width: 768px) {
+      /* For all mobile devices */
+      .box {
+        
+        left: 32px;
+      }
+      h1{
+        font-size: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guess the Number From 1 to 10</h1>
+      <div class="box">
+        <h3>Enter a Number</h3>
+        <input type="text" placeholder="Enter a Number...." id="guessnumber">
+        <input type="submit" class="submit" onclick="check()" >
+        <p id="result">YOUR'RE RIGHT/ WRONG </p>
+      </div>
+    </div>
+        
+    <script>
+       var guessed_number =document.getElementById("guessnumber")
+       var result = document.getElementById("result")
+
+       function check(){
+        var random_number=Math.ceil(Math.random()*10)
+        var check_number= guessed_number.value
+        if (random_number == check_number){
+           result.textContent = "YOUR'RE RIGHT 🎉"
+           console.log(random_number)
+           alert("CONGRATULATIONS 🎉🎉🎉🎉🎉🎉")
+          
+        }
+        else{
+            result.textContent = "YOUR'RE WRONG 😂😂"
+            console.log(random_number)
+            alert("BETTER LUCK NEXT TIME 😂😂😂😂😂😂😂😂😂😂 ")
+        }
+       }
+
+    </script>
+  </body>
+</html>
